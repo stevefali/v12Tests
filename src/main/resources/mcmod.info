@@ -1,0 +1,16 @@
+[
+{
+  "modid": "v12tests",
+  "name": "Mega Randomizer 1.12.2 Tests",
+  "description": "Example placeholder mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Steve"],
+  "credits": "The Forge and FML guys, for making this example",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
