@@ -1,13 +1,22 @@
 package com.example.examplemod;
 
 import com.example.examplemod.event.ServerEvents;
+import com.example.examplemod.megadrops.RandomDrops;
+import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartedEvent;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import org.apache.logging.log4j.Logger;
+
+import java.util.ArrayList;
 
 @Mod(modid = V12Tests.MODID, name = V12Tests.NAME, version = V12Tests.VERSION)
 public class V12Tests
@@ -30,6 +39,22 @@ public class V12Tests
         // some example code
         logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
         MinecraftForge.EVENT_BUS.register(new ServerEvents());
+    }
+
+    @EventHandler
+    public void onServerReady(FMLServerStartedEvent event) {
+//        ArrayList<Item> sampleList = new ArrayList<>(ForgeRegistries.ITEMS.getValuesCollection());
+//        for (Item item : sampleList) {
+//            System.out.println(item.getUnlocalizedName());
+//        }
+//        System.out.println("List size: " + sampleList.size());
+
+//
+//        ForgeRegistries.ITEMS.getKeys().forEach(item -> {
+//            System.out.println(item.toString());
+//        });
+
+        RandomDrops.shuffleItems(FMLCommonHandler.instance().getMinecraftServerInstance().getEntityWorld().getSeed());
     }
 
 }

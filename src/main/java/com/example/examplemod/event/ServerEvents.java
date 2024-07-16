@@ -3,12 +3,12 @@ package com.example.examplemod.event;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
 
 public class ServerEvents {
 
@@ -27,6 +27,9 @@ public class ServerEvents {
 
         event.getDrops().add(new EntityItem(world, ent.posX, ent.posY, ent.posZ, new ItemStack(Blocks.GOLD_BLOCK)));
 
+
     }
+
+
 
 }
