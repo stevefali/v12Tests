@@ -1,6 +1,7 @@
 package com.example.examplemod;
 
 import com.example.examplemod.event.ServerEvents;
+import com.example.examplemod.gamerules.MegaGameRules;
 import com.example.examplemod.megadrops.RandomDrops;
 import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
@@ -53,6 +54,8 @@ public class V12Tests
 //        ForgeRegistries.ITEMS.getKeys().forEach(item -> {
 //            System.out.println(item.toString());
 //        });
+
+        MegaGameRules.register();
 
         RandomDrops.shuffleItems(FMLCommonHandler.instance().getMinecraftServerInstance().getEntityWorld().getSeed());
     }

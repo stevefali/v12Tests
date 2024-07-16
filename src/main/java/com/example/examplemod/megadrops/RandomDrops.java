@@ -1,6 +1,7 @@
 package com.example.examplemod.megadrops;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
@@ -9,7 +10,6 @@ import java.util.*;
 public class RandomDrops {
 
     private static ArrayList<Item> masterList;
-
     private static ArrayList<Item> shuffledList;
 
 
@@ -28,6 +28,19 @@ public class RandomDrops {
         Collections.shuffle(shuffledList, new Random(gameSeed));
     }
 
+    public static Item getRandomizedItem(ItemStack vanillaItem) {
+        if (masterList != null) {
+            int index = masterList.indexOf(vanillaItem.getItem());
+
+            if (index == -1) {
+                return vanillaItem.getItem();
+            } else {
+                return shuffledList.get(index);
+            }
+        } else {
+            return vanillaItem.getItem();
+        }
+    }
 
 
     private static final String[] excludeItems = {
