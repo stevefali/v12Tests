@@ -1,5 +1,6 @@
 package com.example.examplemod;
 
+import com.example.examplemod.event.ClientEvents;
 import com.example.examplemod.event.ServerEvents;
 import com.example.examplemod.gamerules.MegaGameRules;
 import com.example.examplemod.megadrops.RandomDrops;
@@ -40,6 +41,7 @@ public class V12Tests
         // some example code
         logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
         MinecraftForge.EVENT_BUS.register(new ServerEvents());
+        MinecraftForge.EVENT_BUS.register(new ClientEvents());
     }
 
     @EventHandler
