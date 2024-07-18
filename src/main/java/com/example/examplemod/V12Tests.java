@@ -4,6 +4,7 @@ import com.example.examplemod.event.ClientEvents;
 import com.example.examplemod.event.ServerEvents;
 import com.example.examplemod.gamerules.MegaGameRules;
 import com.example.examplemod.megadrops.RandomDrops;
+import com.example.examplemod.networking.MegaMessages;
 import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -42,6 +43,8 @@ public class V12Tests
         logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
         MinecraftForge.EVENT_BUS.register(new ServerEvents());
         MinecraftForge.EVENT_BUS.register(new ClientEvents());
+
+        MegaMessages.register();
     }
 
     @EventHandler

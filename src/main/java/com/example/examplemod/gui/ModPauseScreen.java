@@ -1,5 +1,8 @@
 package com.example.examplemod.gui;
 
+import com.example.examplemod.gamerules.MegaGameRules;
+import com.example.examplemod.networking.MegaMessages;
+import com.example.examplemod.networking.packets.SetGameRulesC2SPacket;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiIngameMenu;
 import net.minecraftforge.fml.relauncher.Side;
@@ -32,6 +35,7 @@ public class ModPauseScreen extends GuiIngameMenu{
 
         if (button.id == 14) {
             System.out.println("Mega Randomizer Options button clicked!!");
+            MegaMessages.sendToServer(new SetGameRulesC2SPacket(false));
         }
     }
 
