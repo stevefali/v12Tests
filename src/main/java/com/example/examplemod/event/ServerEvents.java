@@ -28,12 +28,13 @@ public class ServerEvents {
             ArrayList<ItemStack> randomizedDrops = new ArrayList<>();
             for (ItemStack vanillaDrop : event.getDrops()) {
                 for (int i = 0; i < vanillaDrop.getCount(); i++) {
-                    randomizedDrops.add(new ItemStack(RandomDrops.getRandomizedItem(vanillaDrop)));
+//                    randomizedDrops.add(new ItemStack(RandomDrops.getRandomizedItem(vanillaDrop)));
+                    randomizedDrops.add(RandomDrops.getRandomizedItem(vanillaDrop));
                     System.out.println(vanillaDrop.getDisplayName() + ", " + vanillaDrop.getItemDamage() + ", " + vanillaDrop.getUnlocalizedName());
 
                 }
             }
-            randomizedDrops.add(new ItemStack(Blocks.LOG, 1, 3));
+//            randomizedDrops.add(new ItemStack(Blocks.LOG, 1, 3));
 
             event.getDrops().clear();
             event.getDrops().addAll(randomizedDrops);
