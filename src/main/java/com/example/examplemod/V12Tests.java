@@ -5,6 +5,7 @@ import com.example.examplemod.event.ServerEvents;
 import com.example.examplemod.gamerules.MegaGameRules;
 import com.example.examplemod.megadrops.RandomDrops;
 import com.example.examplemod.networking.MegaMessages;
+import com.example.examplemod.test.ItemTests;
 import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -21,7 +22,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 
-@Mod(modid = V12Tests.MODID, name = V12Tests.NAME, version = V12Tests.VERSION)
+@Mod(modid = V12Tests.MODID, name = V12Tests.NAME, version = V12Tests.VERSION, useMetadata = true)
 public class V12Tests
 {
     public static final String MODID = "v12tests";
@@ -63,6 +64,8 @@ public class V12Tests
         MegaGameRules.register();
 
         RandomDrops.shuffleItems(FMLCommonHandler.instance().getMinecraftServerInstance().getEntityWorld().getSeed());
+
+        ItemTests.testItemRegistry();
     }
 
 }
