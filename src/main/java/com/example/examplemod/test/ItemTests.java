@@ -5,6 +5,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import org.lwjgl.Sys;
 
 
 import java.util.ArrayList;
@@ -27,12 +28,20 @@ public class ItemTests {
             System.out.println(info);
         });
         System.out.println("ForgeRegistry.ITEMS size: " + ForgeRegistries.ITEMS.getEntries().size());
+        testAddingToList();
     }
 
 
     private static final Map<Integer, Integer> subtypeQuantities = createSubtypeQuantities();
 
+    private static void testAddingToList() {
+        Item banner = Item.getItemById(425);
+        banner.getDefaultInstance().setItemDamage(10);
+        System.out.println("Test of banner name: " + banner.getDefaultInstance().getDisplayName());
 
+        //TODO: Try using ItemStack instead of Item.
+
+    }
 
     private static Map<Integer, Integer> createSubtypeQuantities() {
         Map<Integer, Integer> subtypeQuantities = new HashMap<>();
