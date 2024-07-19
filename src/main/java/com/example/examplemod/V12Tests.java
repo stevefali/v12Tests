@@ -65,7 +65,7 @@ public class V12Tests
 
         RandomDrops.shuffleItems(FMLCommonHandler.instance().getMinecraftServerInstance().getEntityWorld().getSeed());
 
-        ItemTests.testItemRegistry();
+        ItemTests.testAddingToList();
     }
 
 }
