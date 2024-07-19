@@ -35,11 +35,9 @@ public class ItemTests {
     private static final Map<Integer, Integer> subtypeQuantities = createSubtypeQuantities();
 
     private static void testAddingToList() {
-        Item banner = Item.getItemById(425);
-        banner.getDefaultInstance().setItemDamage(10);
-        System.out.println("Test of banner name: " + banner.getDefaultInstance().getDisplayName());
-
-        //TODO: Try using ItemStack instead of Item.
+       ItemStack banner = Item.getItemById(425).getDefaultInstance();
+       banner.setItemDamage(10);
+       System.out.println(banner.getDisplayName());
 
     }
 
